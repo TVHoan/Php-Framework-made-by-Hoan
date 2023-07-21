@@ -1,0 +1,15 @@
+{
+    "name": "thgroup1/framework",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Trần Vũ Hoàn",
+            "email": "99460453+TVHoan@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
