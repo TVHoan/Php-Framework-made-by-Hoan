@@ -11,5 +11,8 @@
             "email": "99460453+TVHoan@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "joanhey/adapterman": "^0.6.1",
+        "vlucas/phpdotenv": "^5.5"
+    }
 }

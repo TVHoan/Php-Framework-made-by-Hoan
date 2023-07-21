@@ -1,0 +1,109 @@
+2023-07-21 04:47:18 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: An attempt was made to access a socket in a way forbidden by its access permissions in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
+2023-07-21 04:48:10 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: An attempt was made to access a socket in a way forbidden by its access permissions in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
+2023-07-21 07:58:28 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: An attempt was made to access a socket in a way forbidden by its access permissions in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
+2023-07-21 08:00:47 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: An attempt was made to access a socket in a way forbidden by its access permissions in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
+2023-07-21 08:02:46 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: An attempt was made to access a socket in a way forbidden by its access permissions in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
+2023-07-21 08:05:12 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: An attempt was made to access a socket in a way forbidden by its access permissions in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
+2023-07-21 08:15:20 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: An attempt was made to access a socket in a way forbidden by its access permissions in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
+2023-07-21 08:16:00 pid:1 Error: Call to undefined function run() in C:\xampp\htdocs\framework\worker.php:21
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Connection\TcpConnection.php(646): {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Events\Select.php(311): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1479): Workerman\Events\Select->loop()
+#3 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#4 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#5 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#6 {main}
+2023-07-21 08:16:05 pid:1 Error: Call to undefined function run() in C:\xampp\htdocs\framework\worker.php:21
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Connection\TcpConnection.php(646): {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Events\Select.php(311): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1479): Workerman\Events\Select->loop()
+#3 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#4 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#5 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#6 {main}
+2023-07-21 08:19:07 pid:1 Error: Call to undefined function run() in C:\xampp\htdocs\framework\worker.php:21
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Connection\TcpConnection.php(646): {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Events\Select.php(311): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1479): Workerman\Events\Select->loop()
+#3 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#4 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#5 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#6 {main}
+2023-07-21 08:19:43 pid:1 Error: Call to undefined function run() in C:\xampp\htdocs\framework\worker.php:21
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Connection\TcpConnection.php(646): {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Events\Select.php(311): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1479): Workerman\Events\Select->loop()
+#3 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#4 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#5 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#6 {main}
+2023-07-21 08:20:41 pid:1 Error: Call to undefined function run() in C:\xampp\htdocs\framework\worker.php:21
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Connection\TcpConnection.php(646): {closure}(Object(Workerman\Connection\TcpConnection), Array)
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Events\Select.php(311): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1479): Workerman\Events\Select->loop()
+#3 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#4 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#5 C:\xampp\htdocs\framework\worker.php(24): Workerman\Worker::runAll()
+#6 {main}
+2023-07-21 09:09:11 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Exception: Failed to parse address "" in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php:2356
+Stack trace:
+#0 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1477): Workerman\Worker->listen()
+#1 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(1399): Workerman\Worker::forkWorkersForWindows()
+#2 C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php(560): Workerman\Worker::forkWorkers()
+#3 C:\xampp\htdocs\framework\worker.php(25): Workerman\Worker::runAll()
+#4 {main}
+  thrown in C:\xampp\htdocs\framework\vendor\workerman\workerman\Worker.php on line 2356"
