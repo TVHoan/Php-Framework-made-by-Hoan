@@ -41,7 +41,7 @@ class Route
         if (is_string($callback)){
             Return $this->renderView($callback);
         }
-        call_user_func($callback);
+       return call_user_func($callback);
     }
 
     private function renderView(string $view)
