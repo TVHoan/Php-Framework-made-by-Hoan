@@ -18,7 +18,19 @@ $http_worker->onWorkerStart = static function () {
 };
 
 $http_worker->onMessage = static function ($connection, $request) {
-
+//    $file = __DIR__."/public/".ltrim($_SERVER['REQUEST_URI'] ?? '', '/');
+//
+//    if (str_contains($file, '..')) {
+//        $response = new \Workerman\Protocols\Http\Response(403);
+//
+//        return $connection->send($response);
+//    }
+//
+//    if (is_file($file)) {
+//        $response = new \Workerman\Protocols\Http\Response();
+//        $response->withFile($file);
+//        return $connection->send($response);
+//    }
     $connection->send(run());
 };
 
