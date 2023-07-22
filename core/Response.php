@@ -9,7 +9,7 @@ class Response
         $this->statusCode =$code;
     }
     public function SetHeader(string $header,int $code,bool $replace){
-        $this->setStatusCode($code);
+        $this->setStatusCode(404);
         addHeader($header,$replace,$this->statusCode);
 
     }
