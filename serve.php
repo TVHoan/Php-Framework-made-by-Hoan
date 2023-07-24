@@ -5,5 +5,5 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 $index = __DIR__.'./public/index.php';
 
-$host = $_ENV['HOST'].':'. $_ENV['PORT'];
+$host = $_ENV['HOST'];
 shell_exec('php -S '.$host.'  '.$index);

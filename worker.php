@@ -7,7 +7,7 @@ use Workerman\Worker;
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 Adapterman::init();
-$host = $_ENV['HOST'].':'. $_ENV['PORT'];
+$host = $_ENV['HOST'];
 $http_worker                = new Worker('http://'.$host);
 $http_worker->count         = 8;
 $http_worker->name          = 'AdapterMan';
