@@ -4,10 +4,13 @@ namespace app\core;
 use Dotenv\Dotenv;
 use PDO;
 
-$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable(__DIR__."/../");
+$dotenv->load();
 class Db
 {
 public $host ;
+public $port ;
+public $sql;
 public $dbname;
 public $username;
 public $password;
@@ -26,19 +29,29 @@ public string $condition;
      */
     public function __construct()
     {
-        $this->host = $_ENV['DBHOST'] ?? 'localhost:3306';
-        $this->dbname = $_ENV['DBNAME'] ?? 'database';
+        $this->sql = $_ENV['SQL'] ?? 'mysql';
+        $this->host = $_ENV['DBHOST'] ?? 'localhost';
+        $this->port = $_ENV['PORT'] ?? '3306';
+        $this->dbname = $_ENV['DBNAME'] ?? '';
         $this->username = $_ENV['DBUSERNAME'] ?? 'root';
         $this->password = $_ENV['DBPASSWORD'] ?? '';
-        $this->connect = new  PDO("mysql:host=$this->host; dbname=$this->dbname; charset=utf8", $this->username, $this->password);
+
+        $dns = $this->sql.":host=$this->host;dbname=$this->dbname;port=".$this->port.";charset=utf8";
+        $this->connect = new  PDO($dns, $this->username, $this->password);
+
     }
     public function table(string $table){
         $this->table = $table;
         return $this;
     }
-    public function insert($column = [], $data = []){
-        $new_column = implode(",", $column);
-        $new_data = implode(",", $data);
+    public function select($field = []){
+       $field_select =  count($field) >0 ? implode(",", $field) : "*";
+        $this->query = "SELECT ".$field_select ." FROM ".$this->table;
+        return $this;
+    }
+    public function insert( $data = []){
+        $new_column = implode(",", array_keys($data));
+        $new_data = implode(",", array_values($data));
         $this->query  = "INSERT INTO ". $this->table." (".$new_column.") VALUES (".$new_data.")";
         return $this;
     }
@@ -47,7 +60,7 @@ public string $condition;
         $index = 1;
         foreach ($column_data as $key =>$value ){
             $space = "";
-            if($index>1 and $index < count($column_data))
+            if($index > 1 and $index < count($column_data))
             {
                 $space = ",";
             }
@@ -78,8 +91,12 @@ public string $condition;
 
     }
 
-    public function execute(){
-        return  $this->connect->execute($this->query);
+    public function get(){
+        echo "<pre>", var_dump($this->query), "</pre>";
+
+         $stmt = $this->connect->query($this->query);
+         $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
