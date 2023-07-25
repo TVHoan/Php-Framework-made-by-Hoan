@@ -19,7 +19,8 @@ public PDO $connect;
 
 public string $table;
 public string $query;
-public string $condition;
+public string $condition = '1 = 1';
+public $stmt;
 
     /**
      * @param $host
@@ -51,44 +52,45 @@ public string $condition;
     }
     public function insert( $data = []){
         $new_column = implode(",", array_keys($data));
-        $new_data = implode(",", array_values($data));
-        $this->query  = "INSERT INTO ". $this->table." (".$new_column.") VALUES (".$new_data.")";
-        return $this;
-    }
-    public function update( $column_data = ["username"=>"admin"] ){
-        $new_column_data = '';
-        $index = 1;
-        foreach ($column_data as $key =>$value ){
-            $space = "";
-            if($index > 1 and $index < count($column_data))
-            {
-                $space = ",";
-            }
-            $new_column_data += $key." = ".$value.$space;
-            $index++;
+        $array_columns = array_map(function ($value){
+            return ":".$value;
+        },array_keys($data));
+        $column_template = implode(",",$array_columns);
+        $this->query  = "INSERT INTO ". $this->table." (".$new_column.") VALUES (".$column_template.")";
+        $this->stmt =$this->connect->prepare($this->query);
+        for ($index = 0; $index<count($array_columns);$index++ ){
+            $this->stmt->bindParam($array_columns[$index],array_values($data)[$index]);
         }
 
-
-        $this->query = "UPDATE ".$this->table."SET ".$new_column_data." WHERE ".$this->condition;
         return $this;
     }
-//    public function where(mixed ...$condition){
-//        $new_condition ='';
-//        if (!is_array($condition) or count($condition) == 2)
-//        {
-//            $this->condition = $condition[0]." = ".$condition[1];
-//            return $this;
-//        }
+    public function update( $data = ["username"=>"admin"] ){
+        $array_columns = array_map(function ($value){
+            return $value." = :".$value;
+        },array_keys($data));
+        $column_template = implode(",",$array_columns);
+        $this->query = "UPDATE ".$this->table." SET ".$column_template." WHERE ".$this->condition;
+        $mapping_column = array_map(function ($value){
+            return ":".$value;
+        },array_keys($data));
+        $this->stmt = $this->connect->prepare($this->query);
+
+        for ($index = 0; $index < count($mapping_column);$index++ ){
+            $this->stmt->bindParam($mapping_column[$index],array_values($data)[$index]);
+        }
+        return $this;
+    }
+    public function where(mixed ...$condition){
+        $new_condition ='';
+        if (!is_array($condition) or count($condition) == 2)
+        {
+            $this->condition = $condition[0]." = ".$condition[1];
+            return $this;
+        }
 //        foreach ($condition as $value){
 //            if ()
 //        }
-//        return $this;
-//    }
-    public function orwhere($condtion){
-
-    }
-    public function andwhere($condtion){
-
+        return $this;
     }
 
     public function get(){
@@ -98,6 +100,16 @@ public string $condition;
          $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function delete()
+    {
+        $this->query = "DELETE FROM ".$this->table." WHERE ".$this->condition;
+        $this->stmt= $this->connect->prepare($this->query);
+        return $this;
+    }
+    public function save() : bool{
+       return $this->stmt->execute();
+
+}
 
 
 }

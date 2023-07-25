@@ -5,23 +5,27 @@ namespace app\core;
 class DbModel
 {
     public array $condition;
-    public function insert(){
+    public static function connect()
+    {
+        return (new Db())->connect();
+    }
+    public static function insert(){
             $db = new  Db();
             $db->table("user")->insert()->execute();
     }
-    public function update(){
+    public static function update(){
 
     }
-    public function delete(){
+    public static function delete(){
 
     }
-    public function select(){
+    public static function all(){
 
     }
-    public function findone($id){
+    public static function findone($id){
 
     }
-    public function where(){
+    public static function where(){
 
     }
 }
