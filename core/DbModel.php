@@ -2,30 +2,43 @@
 
 namespace app\core;
 
-class DbModel
+ class DbModel
 {
-    public array $condition;
-    public static function connect()
+    protected  $table = "";
+
+    protected  $fields = [];
+    protected  $condition = "1 = 1";
+
+    protected $db ;
+    /**
+     * @param string $table
+     */
+    public function __construct()
     {
-        return (new Db())->connect();
+        $this->db = (new Db());
     }
-    public static function insert(){
-            $db = new  Db();
-            $db->table("user")->insert()->execute();
+
+    public  function create($data = []){
+        $success = $this->db->table($this->table)->insert($data)->save();
+        return $success;
     }
-    public static function update(){
+    public  function update($data){
+        $success = $this->db->table($this->table)->where()->update($data)->save();
+        return $success;
+    }
+    public  function delete($id){
+
+        $success = $this->db->table($this->table)->where("id",$id)->delete()->save();
+        return $success;
+    }
+    public function all($column = ["*"]){
+        return $this->db->table($this->table)->where($this->condition)->select()->get();
+    }
+    public function findone($id){
 
     }
-    public static function delete(){
-
-    }
-    public static function all(){
-
-    }
-    public static function findone($id){
-
-    }
-    public static function where(){
-
+    public function where($condition = []){
+            $this->condition = $condition;
+            return $this;
     }
 }

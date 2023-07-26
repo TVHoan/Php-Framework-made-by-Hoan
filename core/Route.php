@@ -23,11 +23,11 @@ class Route
 
     public function get($path ,$callback)
     {
-        $this->routes['GET'][$path] =$callback;
+        $this->routes['GET'][$path] = $callback;
     }
     public function post($path ,$callback)
     {
-        $this->routes['POST'][$path] =$callback;
+        $this->routes['POST'][$path] = $callback;
     }
 
     public function resolve()
@@ -38,7 +38,6 @@ class Route
         $assets = $this->isAssets($path);
         if($assets!='')
         {
-
            return $this->renderFile($assets);
         }
         if ($callback === false)
@@ -50,7 +49,7 @@ class Route
         if (is_string($callback)){
             Return $this->renderView($callback);
         }
-       return call_user_func($callback);
+       return call_user_func($callback,$this->request);
     }
 
     private function renderView(string $view)
@@ -90,6 +89,9 @@ class Route
             return $pathFile;
         }
         return '';
+    }
+    public static function redirect($path){
+        header("Location: {$path}");
     }
 
 }

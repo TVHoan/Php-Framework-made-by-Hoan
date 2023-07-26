@@ -36,7 +36,39 @@
         </div>
     </div>
 </nav>
-<h1> <?php echo "Hello, world!" ?></h1>
+<!DOCTYPE html>
+<html>
+<style>
+    table, th, td {
+        border:1px solid black;
+    }
+</style>
+<body>
+
+<h2>A basic HTML table</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>UserName</th>
+        <th>PassWord</th>
+    </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($users as $index =>$user ):
+        echo "<tr>
+        <td> $user[id] </td>
+        <td>$user[username]</td>
+        <td>$user[password]</td>
+            </tr>";
+         endforeach;  ?>
+    </tbody>
+</table>
+
+
+</body>
+</html>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

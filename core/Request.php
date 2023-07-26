@@ -15,5 +15,11 @@ class Request
     public function method(){
          return $_SERVER["REQUEST_METHOD"];
     }
+    public function get(){
+        return $_GET;
+    }
+    public function post(){
+        return $_POST;
+    }
 
 }

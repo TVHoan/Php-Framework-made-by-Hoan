@@ -45,7 +45,7 @@ public $stmt;
         $this->table = $table;
         return $this;
     }
-    public function select($field = []){
+    public function select(mixed ...$field ){
        $field_select =  count($field) >0 ? implode(",", $field) : "*";
         $this->query = "SELECT ".$field_select ." FROM ".$this->table;
         return $this;
@@ -64,7 +64,7 @@ public $stmt;
 
         return $this;
     }
-    public function update( $data = ["username"=>"admin"] ){
+    public function update( $data = [] ){
         $array_columns = array_map(function ($value){
             return $value." = :".$value;
         },array_keys($data));
@@ -81,7 +81,6 @@ public $stmt;
         return $this;
     }
     public function where(mixed ...$condition){
-        $new_condition ='';
         if (!is_array($condition) or count($condition) == 2)
         {
             $this->condition = $condition[0]." = ".$condition[1];
@@ -94,7 +93,6 @@ public $stmt;
     }
 
     public function get(){
-        echo "<pre>", var_dump($this->query), "</pre>";
 
          $stmt = $this->connect->query($this->query);
          $stmt->execute();
@@ -110,6 +108,4 @@ public $stmt;
        return $this->stmt->execute();
 
 }
-
-
 }
