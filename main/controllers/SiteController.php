@@ -29,7 +29,9 @@ namespace app\main\controllers;
         json_encode($request->post());
  }
  public static function view($path,$params = array()){
-        ${array_keys($params)[0]} = array_values($params)[0];
+     foreach ($params as $key =>$value){
+         $$key = $value;
+     }
          include_once __DIR__.'/../../views/'.$path.".php";
  }
 
