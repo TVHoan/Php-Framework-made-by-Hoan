@@ -38,7 +38,12 @@ public $stmt;
         $this->password = $_ENV['DBPASSWORD'] ?? '';
 
         $dns = $this->sql.":host=$this->host;dbname=$this->dbname;port=".$this->port.";charset=utf8";
-        $this->connect = new  PDO($dns, $this->username, $this->password);
+        try {
+            $this->connect = new  PDO($dns, $this->username, $this->password);
+        }
+        catch (\PDOException  $exception){
+            exit($exception->getMessage()); ;
+        }
 
     }
     public function table(string $table){

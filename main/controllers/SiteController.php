@@ -9,10 +9,14 @@ namespace app\main\controllers;
 
  class SiteController
 {
+    private $layout = "layouts/layout";
     public function index(){
         $user = new Users();
-        self::view("home/index", ["users"=>$user->all()]);
+        $this->view("home/index", ["users"=>$user->all()]);
 
+    }
+    public function register(){
+        return $this->view("auth/register");
     }
     public function create(Request $request){
      $user = new Users();
@@ -28,12 +32,12 @@ namespace app\main\controllers;
 //     return json_encode($user->create(["username"=>"admin1","password"=>"1"]));
         json_encode($request->post());
  }
- public static function view($path,$params = array()){
-     foreach ($params as $key =>$value){
-         $$key = $value;
-     }
-         include_once __DIR__.'/../../views/'.$path.".php";
- }
+    public function view($path,$params = array()){
+        View::render($path,$params,$this->layout);
+    }
+    public function view_with_layout($path,$params = array(),$layout=""){
+        View::render($path,$params,$layout);
+    }
 
 
 }

@@ -47,15 +47,12 @@ class Route
             return "Not Found";
         }
         if (is_string($callback)){
-            Return $this->renderView($callback);
+            Return View::render($callback);
         }
        return call_user_func($callback,$this->request);
     }
 
-    private function renderView(string $view)
-    {
-        include_once __DIR__.'/../views/'.$view.".php";
-    }
+
     private function renderFile($path){
         switch (pathinfo($path, PATHINFO_EXTENSION)) {
             case 'css':
