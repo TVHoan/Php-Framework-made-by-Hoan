@@ -7,13 +7,15 @@ class View
     public static function render(string $path,$params = array(),$layout = "")
     {
 
-        if (self::exist_view($layout)){
-            $view = self::view($path,$params);
-            $layout = self::view($layout,$params);
-             str_replace("{{body}}",$view,$layout);
-             exit();
-        }
-       self::view($path,$params);
+//        if (self::exist_view($layout)){
+//            $view = self::view($path,$params);
+//            $layout = self::view($layout,$params);
+//            return str_replace("{{body}}",$view,$layout);
+//        }
+//        else{
+            self::view($path,$params);
+//        }
+
     }
 
     protected static function view($path,$params = array()){

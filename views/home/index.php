@@ -1,5 +1,5 @@
 
-
+<?php include_once __DIR__."/../layouts/header.php" ?>
 
 <table class="table">
     <thead>
@@ -18,3 +18,4 @@
             </tr>";
          endforeach;  ?>
     </tbody>
+    <?php include_once __DIR__."/../layouts/footer.php" ?>
