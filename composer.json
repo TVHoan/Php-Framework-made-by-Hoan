@@ -1,5 +1,7 @@
 {
-    "name": "thgroup1/framework",
+    "name": "madephp/framework",
+    "description": "simple framework with php made by TVHoan",
+    "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
             "app\\": "./"
@@ -8,8 +10,11 @@
     "authors": [
         {
             "name": "Trần Vũ Hoàn",
-            "email": "99460453+TVHoan@users.noreply.github.com"
+            "email": "tranhoan.marketing@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=8.0.29",
+        "joanhey/adapterman": "^0.6.1"
+    }
 }

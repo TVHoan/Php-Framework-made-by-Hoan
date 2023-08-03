@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'madephp/framework',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'c5e2ee5c9a44036da44b41b997c4da9348c385dd',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'joanhey/adapterman' => array(
+            'pretty_version' => '0.6.1',
+            'version' => '0.6.1.0',
+            'reference' => '0628d42a579ff214abd1114193a09d1f52ae5eb2',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../joanhey/adapterman',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'madephp/framework' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'c5e2ee5c9a44036da44b41b997c4da9348c385dd',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'workerman/workerman' => array(
+            'pretty_version' => 'v4.1.13',
+            'version' => '4.1.13.0',
+            'reference' => '807780ff672775fcd08f89e573a2824e939021ce',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../workerman/workerman',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
