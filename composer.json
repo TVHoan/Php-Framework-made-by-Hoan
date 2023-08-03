@@ -14,7 +14,8 @@
         }
     ],
     "require": {
-        "php": ">=8.0.29",
-        "joanhey/adapterman": "^0.6.1"
+      "php": ">=8.0.29",
+      "joanhey/adapterman": "^0.6.1",
+        "vlucas/phpdotenv": "^5.5"
     }
 }
